@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness App Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="welcome" class="screen active">
+  <h1>Welcome to FitLife</h1>
+  <p>Your journey to better fitness starts here!</p>
+  <button class="primary" onclick="showScreen('onboarding')">Get Started</button>
+</div>
+
+<div id="onboarding" class="screen">
+  <div class="carousel">
+    <img src="https://via.placeholder.com/300x200" alt="Feature 1">
+    <p>Personalized Plans</p>
+  </div>
+  <div class="progress">Step 1 of 3</div>
+  <button class="primary" onclick="showScreen('profileSetup')">Next</button>
+  <button class="secondary" onclick="showScreen('profileSetup')">Skip</button>
+</div>
+
+<div id="profileSetup" class="screen">
+  <h2>Profile Setup</h2>
+  <form id="profileForm" onsubmit="event.preventDefault(); showScreen('goalSelection');">
+    <label for="name">Name:</label>
+    <input id="name" type="text" required><br>
+    <label for="age">Age:</label>
+    <input id="age" type="number" required><br>
+    <label for="weight">Weight (kg):</label>
+    <input id="weight" type="number" required><br>
+    <label for="height">Height (cm):</label>
+    <input id="height" type="number" required><br>
+    <button type="submit" class="primary">Next</button>
+  </form>
+</div>
+
+<div id="goalSelection" class="screen">
+  <h2>Select Your Goals</h2>
+  <button class="primary" onclick="showScreen('dashboard')">Weight Loss</button>
+  <button class="primary" onclick="showScreen('dashboard')">Muscle Gain</button>
+  <button class="primary" onclick="showScreen('dashboard')">Flexibility</button>
+</div>
+
+<div id="dashboard" class="screen">
+  <h2>Welcome to Your Dashboard</h2>
+  <p>Here’s a sneak peek of your personalized journey!</p>
+  <button class="primary">Start Now</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
